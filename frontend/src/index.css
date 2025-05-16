@@ -1,0 +1,205 @@
+@import "tailwindcss/index.css";
+@import "tailwindcss/utilities.css";
+
+:root {
+
+  --bg-primary: #ffffff;
+  --text-primary: #110f0f;
+  --header-bg: #f9fbf8b9;
+  --sidebar-bg: #ffffff;
+  --container-bg: #e8f5e9;
+  --sidebar-width: 14rem; }
+
+.dark {
+
+  --bg-primary: #121212;
+  --text-primary: #ffffff;
+  --header-bg: #1f2937;
+  --sidebar-bg: #111827;
+  --container-bg: #1e1e1e;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  margin: 0;
+  transition: background-color 0.3s ease;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+
+.sidebar-transition * {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.dark .sidebar-icon {
+  filter: brightness(0) invert(1);
+}
+
+
+.header {
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-width);
+  right: 0;
+  height: 5rem;
+  background-color: var(--header-bg);
+  display: flex;
+  align-items: center;
+  padding: 0 1.25rem;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+
+.main-content {
+  margin-left: var(--sidebar-width);
+  margin-top: 5rem; 
+  padding: 1.5rem;
+  width: calc(100% - var(--sidebar-width));
+  min-height: calc(100vh - 5rem);
+  background-color: var(--bg-primary);
+}
+
+.dark .react-calendar {
+  background-color: var(--container-bg) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark .react-calendar__tile {
+  color: var(--text-primary) !important;
+}
+
+.dark .react-calendar__navigation button {
+  color: var(--text-primary) !important;
+}
+
+.dark .react-calendar__navigation button:enabled:hover,
+.dark .react-calendar__navigation button:enabled:focus {
+  background-color: #2d3748 !important;
+}
+
+.dark .react-calendar__navigation__label__labelText {
+  color: var(--text-primary) !important;
+}
+
+.dark .react-calendar__tile--now {
+  background: #2d3748 !important;
+}
+
+.dark .react-calendar__tile--active {
+  background: #4a5568 !important;
+}
+
+/*for the calendar container in MyCalendar component */
+.dark .bg-white {
+  background-color: var(--container-bg) !important;
+}
+
+.dark .bg-green-50 {
+  background-color: #1a2e22 !important;
+}
+
+.dark .text-green-700,
+.dark .text-green-800 {
+  color: #a7f3a0 !important;
+}
+
+/* For all icons to be white in dark mode */
+.dark img:not(.no-invert) {
+  filter: brightness(0) invert(1);
+}
+
+.dashboard-container {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+.dashboard-wrapper {
+  background-color: var(--color-background);
+}
+
+.dashboard-card {
+  background-color: var(--color-card-background);
+  color: var(--color-card-text);
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;}
+/* :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+
+
+
+body {
+
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}  */

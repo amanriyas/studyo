@@ -1,0 +1,95 @@
+/* 
+  FLASHCARDS.CSS - Ultra minimal version
+*/
+
+.flashcards-container {
+  margin-top: 120px;
+}
+
+/* Ensures the background covers the entire viewport height */
+.full-bg {
+  background-color: #F0E4CE; 
+  min-height: 100vh;
+}
+
+/* Completely disable any animations or transitions */
+* {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Ensure form elements have no special styling or effects */
+input, textarea, select {
+  transition: none !important;
+  animation: none !important;
+  transform: none !important;
+  opacity: 1 !important;
+  border: 1px solid #ccc !important;
+  box-shadow: none !important;
+  -webkit-appearance: none !important;
+}
+
+/* Override any hover effects */
+input:hover, textarea:hover, select:hover,
+input:focus, textarea:focus, select:focus {
+  border: 1px solid #aaa !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid #79A657;
+  outline-offset: 2px;
+}
+
+/* Skip navigation for keyboard users (add this link in your header component) */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #79A657;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* High contrast mode compatibility */
+@media (forced-colors: active) {
+  .flashcard,
+  button {
+    border: 1px solid;
+  }
+}
+
+/* Ensure animation doesn't cause vestibular disorders */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Improved focus styles for cards */
+.flashcard:focus {
+  box-shadow: 0 0 0 3px rgba(121, 166, 87, 0.5), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure text has sufficient contrast */
+.text-gray-400 {
+  color: #666 !important; /* Darker than default for better contrast */
+}
+
+/* Keyboard focus indicator for dropdown items */
+[role="menuitem"]:focus {
+  background-color: rgba(121, 166, 87, 0.1);
+  color: #000;
+}

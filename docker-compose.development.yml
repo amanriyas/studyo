@@ -1,0 +1,65 @@
+services:
+  db_dev:
+    image: postgres:16
+    container_name: postgres_container_dev
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - postgres_data_dev:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    env_file:
+     - .env.development  
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+
+  backend_dev:
+    build: .
+    container_name: backend_dev
+    restart: always  
+    depends_on:
+      db_dev:
+        condition: service_healthy   
+    environment:
+      DATABASE_URL: postgres://${DB_USER}:${DB_PASSWORD}@db_dev:5432/${DB_NAME}
+      DJANGO_SECRET_KEY: ${SECRET_KEY}
+      DEBUG: "True"  
+      ENVIRONMENT: development
+      
+
+
+    volumes:
+      - .:/app
+    ports:
+      - "8002:8000"  
+    env_file:
+     - .env.development  
+    command: >
+      sh -c " python manage.py makemigrations &&
+              python manage.py migrate &&
+              gunicorn study_planner.wsgi:application --bind 0.0.0.0:8000"
+
+  frontend_dev:
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+    container_name: frontend_dev
+    restart: always
+    ports:
+      - "5173:5173"  
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend_dev
+
+
+volumes:
+  postgres_data_dev:

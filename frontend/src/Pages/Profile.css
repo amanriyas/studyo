@@ -1,0 +1,470 @@
+
+:root {
+  --bg-primary: #f5f7fa;
+  --container-bg: #e8f5e9;
+  --container-border: #c8e6c9;
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+  --input-bg: #ffffff;
+  --input-border: #ddd;
+  --button-primary: #28a745;
+  --button-danger: #dc3545;
+  --button-secondary: #007bff;
+  --button-block: #ff5722;
+  --button-unblock: #2196F3;
+  --button-accept: #4CAF50;
+  --button-reject: #f44336;
+  --button-remove: #dc3545;
+  
+  --icon-color: #007bff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --scrollbar-thumb: #4D90FE;
+  --scrollbar-track: #f1f1f1;
+  --friend-item-bg: #f9f9f9;
+  --friend-item-border: #e0e0e0;
+  --empty-state-color: #666;
+}
+
+/* Dark mode variables */
+.dark {
+  --bg-primary: #1a202c;
+  --container-bg: #2d3748;
+  --container-border: #4a5568;
+  --text-primary: #f7fafc;
+  --text-secondary: #e2e8f0;
+  --input-bg: #4a5568;
+  --input-border: #718096;
+  --button-primary: #38a169;  
+  --button-update: #3182ce;   
+  --button-danger: #e53e3e;  
+  --button-secondary: #3182ce;
+  --button-block: #4299e1; 
+  --button-unblock: #4299e1; 
+  --button-accept: #4299e1; 
+  --button-reject: #e53e3e;
+  --button-remove: #e53e3e;
+  --icon-color: #63b3ed;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --scrollbar-thumb: #63b3ed;
+  --scrollbar-track: #2d3748;
+  --friend-item-bg: #4a5568;
+  --friend-item-border: #718096;
+  --empty-state-color: #a0aec0;
+}
+
+.dark-secondary-button {
+  background-color: var(--button-update); 
+  color: white;
+}
+.dark-primary-button {
+  background-color: var(--button-update); 
+  color: white;
+}
+.dark-danger-button {
+  background-color: var(--button-danger);
+  color: white;
+}
+
+.dark-button {
+  background-color: var(--button-primary);
+  color: white;
+}
+
+
+/* 1) focus styles for keyboard navigation (main accessibility feature) */
+button:focus,
+input:focus,
+select:focus {
+  outline: 3px solid #4D90FE; 
+  outline-offset: 2px;
+}
+
+/* 2) more contrast for text */
+.friend-name,
+.friend-section h4,
+.profile-select,
+.profile-input {
+  color: var(--text-primary); 
+}
+
+/* 3) semantic button colors with text */
+.block-button {
+  background-color: var(--button-block); 
+  color: white;
+}
+
+.unblock-button {
+  background-color: var(--button-unblock); 
+  color: white;
+}
+
+/* 4) visible focus for friend items */
+.friend-item:focus-within {
+  box-shadow: 0 0 0 3px #4D90FE;
+}
+
+/* 5) ARIA visibility for screen readers */
+[aria-hidden="true"] {
+  display: none;
+}
+
+/* 6) disabled state styling */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 7) text size for readability */
+body {
+  font-size: 16px; 
+}
+
+.friend-name {
+  font-size: 1.125rem; 
+}
+
+/* 8) hover states for All elements */
+button:hover,
+.friend-item:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* 9) scrollbar for visibility and works on different browsers */
+.scrollable-container {
+  scrollbar-width: auto; 
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+.scrollable-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+}
+
+.scrollable-container::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track);
+}
+
+/* 10) form label association */
+.student-selector label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.profile-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--bg-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .profile-container {
+    margin-left: 250px;
+    margin-top: 80px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .profile-green-container {
+    background-color: var(--container-bg);
+    border: 1px solid var(--container-border);
+    border-radius: 10px;
+    padding: 20px;
+    height: 750px;
+    width: 800px;
+    box-shadow: 0px 4px 8px var(--shadow-color);
+    margin-right: 100px;
+    margin-bottom: 30px;
+    margin-top: 350px;
+  }
+  
+ 
+.profile-picture {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 350px;
+  }
+  
+  .profile-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    background-color: var(--input-bg);
+    text-align: center;
+    font-size: 16px;
+    color: var(--text-primary);
+    box-shadow: 0px 2px 5px var(--shadow-color);
+    transition: all 0.3s ease;
+  }
+  
+  .profile-actions {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    max-width: 400px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profile-button, 
+  .sign-out-button,
+  .blocklist-button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 170px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
+  }
+  
+  .green-button {
+    background-color: var(--button-primary);
+    color: white;
+  }
+  
+  .green-button:hover {
+    opacity: 0.9;
+  }
+  
+  .sign-out-button {
+    background-color: var(--button-danger);
+    color: white;
+  }
+  
+  .sign-out-button:hover {
+    opacity: 0.9;
+  }
+  
+  .blocklist-button {
+    background-color: var(--button-block);
+    color: white;
+  }
+  
+  .blocklist-button:hover {
+    opacity: 0.9;
+  }
+  
+  .profile-icons {
+    margin-top: 30px;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+  }
+  
+  .profile-icons .icon {
+    font-size: 26px;
+    color: var(--icon-color);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .profile-icons .icon:hover {
+    transform: scale(1.1);
+  }
+  
+  .friends-container, 
+  .block-container {
+    margin-left: 250px;
+    margin-top: 80px;
+    padding: 30px;
+    width: 800px;
+  }
+  
+  .list-green-container {
+    background-color: var(--container-bg);
+    border: 1px solid var(--container-border);
+    border-radius: 10px;
+    padding: 25px;
+    width: 100%;
+    box-shadow: 0px 4px 8px var(--shadow-color);
+  }
+  
+  .student-selector {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .profile-select {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 2px solid var(--input-border);
+    font-size: 16px;
+    min-width: 300px;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+  }
+  
+  .friend-search {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .scrollable-container {
+    height: 500px;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: var(--input-bg);
+    border-radius: 10px;
+    border: 2px solid var(--input-border);
+  }
+  
+  .friend-section {
+    margin-bottom: 30px;
+  }
+  
+  .friend-section h4 {
+    font-size: 20px;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--input-border);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .friend-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: var(--friend-item-bg);
+    border-radius: 10px;
+    border: 2px solid var(--friend-item-border);
+  }
+  
+  .friend-info {
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  .friend-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  
+  .friend-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .accept-button,
+  .reject-button,
+  .block-button,
+  .unblock-button,
+  .remove-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  .accept-button {
+    background-color: var(--button-accept);
+    color: white;
+  }
+  
+  .reject-button {
+    background-color: var(--button-reject);
+    color: white;
+  }
+  
+  .block-button {
+    background-color: var(--button-block);
+    color: white;
+  }
+  
+  .unblock-button {
+    background-color: var(--button-unblock);
+    color: white;
+  }
+  
+  .remove-button {
+    background-color: var(--button-remove);
+    color: white;
+  }
+  
+
+  .empty-state {
+    text-align: center;
+    padding: 40px;
+    color: var(--empty-state-color);
+    font-size: 16px;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+  }
+  
+  @media (max-width: 768px) {
+    .profile-container,
+    .friends-container,
+    .block-container {
+      margin-left: 0;
+      width: 95%;
+      padding: 15px;
+      margin-top: 60px;
+    }
+  
+    .profile-green-container,
+    .list-green-container {
+      width: 100%;
+      margin-right: 0;
+      margin-top: 20px;
+      height: auto;
+    }
+  
+    .profile-actions {
+      flex-direction: column;
+    }
+  
+    .profile-button,
+    .sign-out-button,
+    .blocklist-button {
+      width: 100%;
+    }
+  
+    .friend-actions {
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    .student-selector {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .profile-select {
+      min-width: 100%;
+    }
+  }

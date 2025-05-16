@@ -1,0 +1,110 @@
+/* Base Header Styles */
+.header {
+  width: calc(100% - 12rem);
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+  position: fixed;
+  top: 0;
+  left: 12rem;
+  z-index: 10;
+  transition: all 0.3s ease;
+  background-color: #f9fbf8b9;
+
+  /* Rounded bottom corners */
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+
+  /* Subtle shadow for separation */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Light Mode Styles */
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-title {
+  /* Enhanced title for better visibility */
+  font-size: calc(2.2rem * var(--font-size-multiplier));
+  font-weight: 900;
+  color: #110f0f; /* Default for light mode */
+}
+
+.page-icon {
+  width: 45px;
+  height: 45px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Dark Mode Overrides */
+.dark .header {
+  background-color: #1f2937;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.dark .header-title {
+  color: white; /* Title turns white in dark mode */
+}
+
+.dark .page-icon {
+  filter: brightness(0) invert(1);
+}
+
+/* Toggle Button Container */
+.header-actions img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.header-actions img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Font Size Controls */
+.font-size-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.font-size-controls button {
+  padding: 5px 10px;
+  font-size: calc(1rem * var(--font-size-multiplier));
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.font-size-controls button:hover {
+  background-color: #f0f0f0;
+}
+
+.font-size-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dark .font-size-controls button {
+  border-color: #666;
+  color: white;
+}
+
+.dark .font-size-controls button:hover {
+  background-color: #374151;
+}

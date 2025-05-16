@@ -1,0 +1,4 @@
+__pycache__
+/frontend
+/venv
+db.sqlite3
