@@ -1,58 +1,40 @@
-# Team-76
-Team Members:
-1. Aman Abdul Salam A Riyas aar350@student.bham.ac.uk
-2. Heng Cheng hxc313@student.bham.ac.uk
-3. Nada alsawad nxa217@student.bham.ac.uk
-4. Alagappan Alagappan axa2254@student.bham.ac.uk
-5. Fatima Arab fsa257@student.bham.ac.uk
-6. Abdulmonem Altarawneh axa2265@student.bham.ac.uk 
-7. Yazan Dabaan yxd252@student.bham.ac.uk
+# Studyo - Your Ultimate Study Companion 🚀
 
-## Getting Started
+## 📖 Overview
+Studyo is an innovative app designed to address the main struggles of university students, including inefficient study plans, academic workload management, and the impact of mental health on academic success. Unlike other educational apps, Studyo offers a tailored educational experience through AI-driven techniques, collaborative study rooms, gamified features, and wellbeing support.
 
-### Prerequisites
-Make sure you have the following installed on your machine:
-- [Git](https://git-scm.com/)
-- [Docker Desktop](https://www.docker.com/)
+## ✨ Key Features
 
+### 🧠 **AI-Powered Study Mentor**
+- Get custom study plans generated via **Groq API (Llama-3)**.
+- Personalized recommendations based on your learning style and goals.
 
-### Cloning the Repository
-To clone the repository, run the following command:
-```bash
+### 💬 **Wellness Chatbot**
+- A smart study companion that provides motivation and wellness advice.
+- Mental health support to keep you balanced and focused.
 
-git clone https://github.com/uob-team-project/team76.git
-cd team76
-```
+### 👥 **Collaborative Study Rooms**
+- Create or join study groups.
+- Real-time collaboration with peers.
 
-### Installing Dependencies
-To download the necessary dependencies, run the following command to build the docker images for development:
-```bash
-docker compose -f docker-compose.development.yml build
-```
+### 📅 **Smart Calendar**
+- Track important deadlines and events.
+- Sync with your academic schedule.
 
-### Running the Application
-To start the application in development, run the following command:
-```bash
-docker compose -f docker-compose.development.yml up -d
-```
+### 📊 **Interactive Dashboard**
+- Organize subjects and study plans.
+- Take notes and manage lessons efficiently.
 
-This will start the application and make it accessible at `http://localhost:5173`.
+### 🎴 **Flashcards & Spaced Repetition**
+- Create custom flashcards for active recall.
+- Optimized learning with spaced repetition techniques.
 
-### Stopping the Application
-To stop the application, press `Ctrl+C` in the terminal where the application is running.
+### ⏱️ **Pomodoro Timer**
+- Built-in timer with customizable intervals (Pomodoro, custom sessions).
+- Track study sessions for better time management.
 
-### Additional Commands
-To stop and remove all containers, networks, and volumes created by `docker compose -f docker-compose.development.yml build`, run:
-```bash
-docker compose -f docker-compose.development.yml down
-```
-### Please Note
-Every time you make changes in the application, please re-run run:
-```bash
-docker compose -f docker-compose.development.yml build
-
-docker compose -f docker-compose.development.yml up -d
-```
-in order to reflect the changes.
-
+### ♿ **Accessibility Features**
+- High-contrast dark mode.
+- Keyboard navigation & screen reader support.
+- Voice input for hands-free use.
 
